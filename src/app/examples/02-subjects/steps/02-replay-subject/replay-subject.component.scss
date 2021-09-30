@@ -1,0 +1,9 @@
+@use "src/app/examples/example-styles" as example;
+
+:host {
+  @include example.content();
+
+  .form-line {
+    @include example.form-line();
+  }
+}

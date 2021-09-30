@@ -14,7 +14,11 @@ import { FilledExamplePageComponent } from './pages/filled-example-page/filled-e
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [AppComponent, ExampleOverviewComponent, FilledExamplePageComponent],
+  declarations: [
+    AppComponent,
+    ExampleOverviewComponent,
+    FilledExamplePageComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, UiModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -35,14 +35,4 @@ export const steps: ExampleStep[] = [
     title: 'Async Observables',
     description: 'Adding the dimension of time to Observables',
   },
-  {
-    link: '05',
-    title: 'Subjects',
-    description: 'What are subjects?',
-  },
-  {
-    link: '06',
-    title: 'Using Subjects',
-    description: 'Applications for Subjects',
-  },
 ];

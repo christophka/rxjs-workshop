@@ -27,9 +27,16 @@ const routes: Routes = [
           ),
       },
       {
-        path: '02-operators',
+        path: '02-subjects',
         loadChildren: () =>
-          import('./examples/02-operators/operators.module').then(
+          import('./examples/02-subjects/subjects.module').then(
+            (m) => m.SubjectsModule
+          ),
+      },
+      {
+        path: '03-operators',
+        loadChildren: () =>
+          import('./examples/03-operators/operators.module').then(
             (m) => m.OperatorsModule
           ),
       },

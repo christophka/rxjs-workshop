@@ -10,8 +10,6 @@ import { ObservableStepBasicsComponent } from './steps/01-basics/observables.com
 import { ObservableStepAsyncComponent } from './steps/04-async/async-observables.component';
 import { ObserverStepComponent } from './steps/02-observer/observer.component';
 import { SubscriptionStepComponent } from './steps/03-subscription/subscription.component';
-import { SubjectStepComponent } from './steps/05-subject/subject.component';
-import { SubjectStepApplicationComponent } from './steps/06-subject-application/subject-application.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +19,6 @@ import { SubjectStepApplicationComponent } from './steps/06-subject-application/
     IntroComponent,
     ObserverStepComponent,
     SubscriptionStepComponent,
-    SubjectStepComponent,
-    SubjectStepApplicationComponent,
   ],
   imports: [CommonModule, ObservablesRoutingModule, UiModule],
 })

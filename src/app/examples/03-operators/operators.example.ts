@@ -4,7 +4,7 @@ import {
 } from 'src/app/ui/example-components/types/example.type';
 
 export const operatorsExample: Example = {
-  link: '/example/02-operators',
+  link: '/example/03-operators',
   title: 'Operators',
   description: 'Why do they exist and why are they awesome?',
 };

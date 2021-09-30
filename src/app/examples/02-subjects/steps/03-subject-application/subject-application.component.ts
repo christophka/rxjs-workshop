@@ -9,8 +9,8 @@ import {
   templateUrl: './subject-application.component.html',
   styleUrls: ['./subject-application.component.scss'],
 })
-export class SubjectStepApplicationComponent implements OnInit, OnDestroy {
-  private readonly logger = this.consoleService.scopedLogger('06-subjects');
+export class SubjectApplicationStepComponent implements OnInit, OnDestroy {
+  private readonly logger = this.consoleService.scopedLogger('03-subjects');
 
   private readonly clickedSubject = new Subject();
   private readonly eventViewsSubject = new BehaviorSubject<number>(0);

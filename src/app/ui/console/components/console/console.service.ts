@@ -134,7 +134,9 @@ export class ConsoleService extends AbstractLogger {
 /**
  * Creates an rxjs Observer from a given `logger`, that can be passed
  * as a parameter to `subscribe`.
+ *
  * @param logger A logger instance
+ * @param name A name for the log observer that is added to messages
  *
  * @returns
  * Observer that can be passed to an `Observable`s `subscribe` method.
@@ -143,10 +145,11 @@ export class ConsoleService extends AbstractLogger {
  * const logger: Logger;
  * myObservable$.subscribe(logObserver(logger));
  */
-export function logObserver<T>(logger: Logger): PartialObserver<T> {
+export function logObserver<T>(logger: Logger, name = ''): PartialObserver<T> {
+  const prefix = name.length > 0 ? `${name}: ` : '';
   return {
-    next: (value) => logger.log(`next ${value}`, value),
-    complete: () => logger.info('complete'),
-    error: (error) => logger.error(`error ${error}`, error),
+    next: (value) => logger.log(`${prefix}next ${value}`, value),
+    complete: () => logger.info(`${prefix}complete`),
+    error: (error) => logger.error(`${prefix}error ${error}`, error),
   };
 }
