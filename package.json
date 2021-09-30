@@ -1,6 +1,8 @@
 {
   "name": "rxjs-workshop",
   "version": "0.0.0",
+  "license": "MIT",
+  "author": "christophka",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +11,16 @@
     "test": "ng test"
   },
   "private": true,
+  "description": "Interactive RxJS workshop tutorial / playground",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christophka/rxjs-workshop.git"
+  },
+  "keywords": [
+    "rxjs",
+    "workshop",
+    "tutorial"
+  ],
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/common": "~12.2.0",
