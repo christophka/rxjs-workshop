@@ -1,0 +1,71 @@
+<h1>What is a Subject?</h1>
+
+<app-brain-food>
+  A <code>Subject</code> is like an Observable, but can multicast to many
+  Observers. Every <code>Subject</code> is also an <code>Observer</code>.
+
+  <figcaption app-brain-food-caption>
+    from
+    <cite>
+      <a href="https://rxjs.dev/guide/subject" target="_blank">rxjs.dev</a>
+    </cite>
+  </figcaption>
+</app-brain-food>
+
+<!-- <p>There are different specializations of <code>Subject</code></p> -->
+
+<div class="card-grid">
+  <ckad-card class="bg-error">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-1"
+        ><code>Subject</code></ckad-card-title
+      >
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>No initial value or replay behavior.</p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-warn">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-1"
+        ><code>Async<wbr />Subject</code></ckad-card-title
+      >
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>Emits latest value to observers upon completion.</p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-accent">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-1"
+        ><code>Behavior<wbr />Subject</code></ckad-card-title
+      >
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Requires an initial value and emits its current value (last emitted
+        item) to new subscribers.
+      </p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-success">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-1">
+        <code>Replay<wbr />Subject</code>
+      </ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Emits specified number of last emitted values (a replay) to new
+        subscribers.
+      </p>
+    </ckad-card-content>
+  </ckad-card>
+</div>

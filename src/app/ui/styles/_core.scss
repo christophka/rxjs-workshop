@@ -1,0 +1,21 @@
+@use "./colors.mixin" as colors;
+
+@mixin reset() {
+  body,
+  html {
+    margin: 0;
+    height: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@mixin core() {
+  @include reset();
+}
+
+@mixin theme($theme) {
+  @include colors.apply-color-variants($theme, $class-prefix: "bg-");
+}

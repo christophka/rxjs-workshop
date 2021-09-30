@@ -1,0 +1,41 @@
+<div class="heading">
+  <div class="title">Console</div>
+  <div class="console-buttons">
+    <button
+      ckad-toggle-button
+      color="accent"
+      [toggled]="this.followLatest"
+      (click)="this.onFollowToggled()"
+    >
+      <fa-icon [icon]="'angle-double-down'"></fa-icon>
+    </button>
+    <button ckad-button color="accent" (click)="this.onClearClicked()">
+      <fa-icon [icon]="'times'"></fa-icon>
+    </button>
+  </div>
+</div>
+
+<div #consoleContent class="console-content">
+  <ng-container *ngIf="this.logs$ | async as logs">
+    <table *ngIf="logs.length > 0; else noLogs" class="logs">
+      <tr class="row" *ngFor="let log of this.logs; index as i">
+        <td class="line">
+          <pre>{{ i }}</pre>
+        </td>
+        <td class="time">
+          <pre>{{ log.timestamp | date: this.timeFormat }}</pre>
+        </td>
+        <td class="scope">
+          <pre>{{ log.scope ?? "" }}</pre>
+        </td>
+        <td class="message" [ngClass]="log.level">
+          <pre>{{ log.message }}</pre>
+        </td>
+      </tr>
+    </table>
+
+    <ng-template #noLogs>
+      <pre class="empty">Console is empty</pre>
+    </ng-template>
+  </ng-container>
+</div>

@@ -1,0 +1,54 @@
+<h1>What is an Observable?</h1>
+
+<app-brain-food>
+  Observables are lazy push collections for multiple values.
+
+  <figcaption app-brain-food-caption>
+    from
+    <cite>
+      <a href="https://rxjs.dev/guide/observable" target="_blank">rxjs.dev</a>
+    </cite>
+  </figcaption>
+</app-brain-food>
+
+<div class="card-grid">
+  <ckad-card class="bg-error">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-2">Lazy</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Like a function does nothing, until it is called, an
+        <code>Observable</code> does nothing, until <b>something</b> subscribes
+        to it.
+      </p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-accent">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-2">Push</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        In Push systems, the Producer determines when to send data to the
+        Consumer. The Consumer is unaware of when it will receive that data.
+      </p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-success">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-2">Multiple values</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        An <code>Observable</code> can produce zero to (possibly) infinite
+        values over time.
+      </p>
+    </ckad-card-content>
+  </ckad-card>
+</div>

@@ -1,0 +1,36 @@
+@use "sass:map";
+
+@mixin _apply-from-color-scheme($scheme, $class-prefix: "") {
+  $variants: default, lighter, darker;
+
+  @each $color-variant in $variants {
+    $contrast-variant: #{$color-variant}-contrast;
+    $color: map.get($scheme, $color-variant);
+    $text-color: map.get($scheme, $contrast-variant);
+
+    @if ($color-variant == "default") {
+      .#{$class-prefix} {
+        background-color: $color !important;
+        color: $text-color !important;
+      }
+    } @else {
+      .#{$class-prefix}-#{$color-variant} {
+        background-color: $color !important;
+        color: $text-color !important;
+      }
+    }
+  }
+}
+
+@mixin apply-color-variants($theme, $class-prefix: "") {
+  $color-config: map.get($theme, "color");
+  $colors: primary, accent, success, warn, error, neutral;
+
+  @each $color-name in $colors {
+    $new-class-prefix: #{$class-prefix}#{$color-name};
+    @include _apply-from-color-scheme(
+      map.get($color-config, $color-name),
+      $new-class-prefix
+    );
+  }
+}

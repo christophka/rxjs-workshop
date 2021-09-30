@@ -1,0 +1,14 @@
+// General stuff
+@use "~src/theme" as theme;
+// component theming
+@use "./sidebar.theme" as sidebar;
+
+@mixin base() {
+  min-height: 100vh;
+  border-right: 1px solid transparent;
+}
+
+:host {
+  @include base();
+  @include sidebar.theme(theme.$theme);
+}

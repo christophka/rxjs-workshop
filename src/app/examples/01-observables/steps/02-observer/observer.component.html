@@ -1,0 +1,48 @@
+<h1>What is an Observer?</h1>
+
+<app-brain-food>
+  Observers are just objects with three callbacks, one for each type of
+  notification that an Observable may deliver.
+
+  <figcaption app-brain-food-caption>
+    from
+    <cite>
+      <a href="https://rxjs.dev/guide/observer" target="_blank">rxjs.dev</a>
+    </cite>
+  </figcaption>
+</app-brain-food>
+
+<div class="card-grid">
+  <ckad-card class="bg-accent">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-2">next</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>Is called whenever the <code>Observable</code> emits a value.</p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-success">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-2">complete</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Is called when the <code>Observable</code> is done producing values.
+        This is called without any argument.
+      </p>
+    </ckad-card-content>
+  </ckad-card>
+
+  <ckad-card class="bg-error">
+    <ckad-card-header>
+      <ckad-card-title class="ckad-display-2">error</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>Is called whenever the <code>Observable</code> runs into an error.</p>
+    </ckad-card-content>
+  </ckad-card>
+</div>

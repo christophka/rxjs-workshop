@@ -1,0 +1,24 @@
+// General stuff
+@use "~src/theme" as theme;
+
+// component theming
+@use "./brain-food.theme" as brain-food;
+
+@mixin base() {
+  display: block;
+
+  figure {
+    margin: 0;
+  }
+
+  blockquote {
+    display: flex;
+    flex-direction: row;
+    justify-items: baseline;
+  }
+}
+
+:host {
+  @include base();
+  @include brain-food.theme(theme.$theme);
+}

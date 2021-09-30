@@ -1,0 +1,22 @@
+@use "../../ui/styles/elements";
+
+$example-overview--padding: 2rem;
+$example-overview--gap: 2rem;
+
+:host {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  padding: $example-overview--padding;
+
+  h1 {
+    text-align: center;
+    font-weight: lighter;
+    margin: 4rem 0;
+    font-size: 4rem;
+  }
+
+  .card-grid {
+    @include elements.card-grid-make();
+  }
+}

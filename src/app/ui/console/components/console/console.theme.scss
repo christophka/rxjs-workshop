@@ -1,0 +1,79 @@
+@use "sass:color";
+@use "sass:map";
+
+@mixin _apply-log-level-text-color($theme, $color-scheme, $variant: "text") {
+  $text-color: map.get($theme, "color", $color-scheme, $variant);
+
+  color: $text-color;
+}
+
+@mixin color($theme) {
+  $console--background-color: map.get($theme, "color", "accent", 900);
+  $console--line--background-color: color.scale(
+    $console--background-color,
+    $lightness: 10%
+  );
+
+  @include _apply-log-level-text-color($theme, "foreground");
+  background-color: $console--background-color;
+
+  .heading {
+    border-bottom-color: map.get($theme, "color", "foreground", "divider");
+  }
+
+  .empty {
+    @include _apply-log-level-text-color($theme, "neutral", "default");
+  }
+
+  .row {
+    &:hover {
+      background-color: $console--line--background-color;
+    }
+  }
+
+  .message {
+    @include _apply-log-level-text-color($theme, "foreground");
+
+    &.error {
+      @include _apply-log-level-text-color($theme, "error", "lighter");
+    }
+    &.warn {
+      @include _apply-log-level-text-color($theme, "warn");
+    }
+    &.info {
+      @include _apply-log-level-text-color($theme, "success", "lighter");
+    }
+    &.debug {
+      @include _apply-log-level-text-color($theme, "primary", "lighter");
+    }
+  }
+
+  .line,
+  .time,
+  .scope {
+    @include _apply-log-level-text-color($theme, "neutral", "default");
+  }
+}
+
+@mixin theme-variables($theme) {
+  $console--padding: 0.5rem;
+  $console--border-radius: 0.5rem;
+
+  border-radius: $console--border-radius;
+
+  .heading,
+  .console-content {
+    padding: $console--padding;
+  }
+
+  .console-buttons {
+    > * {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include theme-variables($theme);
+}

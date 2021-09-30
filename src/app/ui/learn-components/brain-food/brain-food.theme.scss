@@ -1,0 +1,64 @@
+@use "sass:map";
+@use "~@ckapp/angular-components/src/lib/core/styles/variables" as ckad-vars;
+
+@mixin color($theme) {
+  $brain-food--background-color: map.get($theme, "color", "primary", "default");
+  $brain-food--border-color: map.get($theme, "color", "primary", "default");
+
+  $brain-food--drop-shadow-color: rgba($brain-food--background-color, 40%);
+  $brain-food--hover--background-color: rgba(
+    $brain-food--background-color,
+    40%
+  );
+
+  figure {
+    background-color: rgba($brain-food--background-color, 20%);
+    border-color: $brain-food--border-color;
+
+    &:hover {
+      box-shadow: 0 0px 2px 1px $brain-food--drop-shadow-color;
+      background: $brain-food--hover--background-color;
+    }
+  }
+}
+
+@mixin theme-variables($theme) {
+  $brain-food--padding: 1rem;
+  $brain-food--border: 1px solid transparent;
+  $brain-food--border-radius: 0.75rem;
+  $brain-food--transition: ckad-vars.$transition--default;
+  $brain-food-icon--margin-right: 2rem;
+
+  figure {
+    padding: $brain-food--padding;
+    border: $brain-food--border;
+    border-radius: $brain-food--border-radius;
+    transition: $brain-food--transition;
+  }
+
+  blockquote {
+    margin: 1rem;
+  }
+
+  .icon {
+    margin-right: $brain-food-icon--margin-right;
+  }
+}
+
+@mixin typography($theme) {
+  $brain-food-icon--font-size: 2rem;
+
+  .icon {
+    font-size: $brain-food-icon--font-size;
+  }
+
+  .content {
+    font-size: 1.25rem;
+  }
+}
+
+@mixin theme($theme) {
+  @include theme-variables($theme);
+  @include color($theme);
+  @include typography($theme);
+}

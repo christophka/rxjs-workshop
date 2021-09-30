@@ -1,0 +1,20 @@
+<app-sidebar>
+  <a app-sidebar-item [routerLink]="'/home'" class="back">
+    <fa-icon [icon]="'angle-left'"></fa-icon> Back to selection
+  </a>
+  <a
+    app-sidebar-item
+    *ngFor="let example of this.steps"
+    [routerLink]="example.link"
+    routerLinkActive="active"
+    >{{ example.link }}. {{ example.title }}</a
+  >
+</app-sidebar>
+
+<main>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+
+  <app-console></app-console>
+</main>

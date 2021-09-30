@@ -1,0 +1,40 @@
+@use "sass:color";
+@use "sass:map";
+
+@mixin color($theme) {
+  $color-config: map.get($theme, "color");
+  $sidebar-item--color: map.get($color-config, "foreground", "text");
+
+  $sidebar-item--active--background-color: color.scale(
+    map.get($color-config, "warn", "default"),
+    $alpha: -60%
+  );
+
+  $sidebar-item--hover--background-color: color.scale(
+    map.get($color-config, "neutral", "default"),
+    $alpha: -60%
+  );
+
+  color: $sidebar-item--color;
+
+  &:hover {
+    background-color: $sidebar-item--hover--background-color;
+  }
+
+  &.active {
+    background-color: $sidebar-item--active--background-color;
+  }
+}
+
+@mixin theme-variables($theme) {
+  $sidebar-item--border-radius: 0.25rem;
+  $sidebar-item--padding: 0.5rem;
+
+  border-radius: $sidebar-item--border-radius;
+  padding: $sidebar-item--padding;
+}
+
+@mixin theme($theme) {
+  @include color($theme);
+  @include theme-variables($theme);
+}

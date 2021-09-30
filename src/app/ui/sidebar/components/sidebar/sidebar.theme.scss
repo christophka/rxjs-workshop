@@ -1,0 +1,19 @@
+@use "sass:map";
+
+@mixin color($theme) {
+  $sidebar--background-color: map.get($theme, "color", "neutral", "darker");
+  $sidebar--border-color: map.get($theme, "color", "neutral", "darker");
+
+  background-color: $sidebar--background-color;
+  border-right-color: $sidebar--border-color;
+}
+
+@mixin theme-variables($theme) {
+  $sidebar--padding: 0.5rem;
+  padding: $sidebar--padding;
+}
+
+@mixin theme($theme) {
+  @include theme-variables($theme);
+  @include color($theme);
+}

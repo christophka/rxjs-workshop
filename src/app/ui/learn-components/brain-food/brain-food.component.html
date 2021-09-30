@@ -1,0 +1,10 @@
+<figure>
+  <blockquote>
+    <fa-icon [icon]="this.icon" class="icon"></fa-icon>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </blockquote>
+
+  <ng-content select="figcaption"></ng-content>
+</figure>

@@ -1,0 +1,18 @@
+<ckad-flip-card [invert]="true">
+  <ckad-card
+    ckad-flip-card-front
+    [class.fill]="true"
+    [ngClass]="this.frontClasses"
+  >
+    <ng-content></ng-content>
+  </ckad-card>
+
+  <ckad-card
+    ckad-flip-card-back
+    [class.fill]="true"
+    [class.deck]="true"
+    [ngClass]="this.backClasses"
+  >
+    <fa-icon [icon]="this.icon" [size]="'2x'"></fa-icon>
+  </ckad-card>
+</ckad-flip-card>

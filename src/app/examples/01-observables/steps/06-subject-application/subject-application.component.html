@@ -1,0 +1,28 @@
+<h1>Subjects in action</h1>
+
+<div class="form-line">
+  <input
+    type="number"
+    min="0"
+    [value]="this.eventViews"
+    (change)="this.onNumberChange($event)"
+  />
+
+  <button ckad-button color="accent" (click)="this.onNextClicked()">Add</button>
+  <button ckad-button color="accent" (click)="this.onPrintLatestEventsClick()">
+    Print latest events
+  </button>
+</div>
+
+<div>
+  <div class="card-grid" *ngIf="this.eventViews$ | async as eventViews">
+    <ckad-card
+      *ngFor="let i of this.arrayFromCount(eventViews)"
+      color="primary"
+    >
+      <ckad-card-content>
+        <div>View {{ i }}</div>
+      </ckad-card-content>
+    </ckad-card>
+  </div>
+</div>

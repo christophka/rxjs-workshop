@@ -1,0 +1,18 @@
+// General stuff
+@use "~src/theme" as theme;
+
+// component theming
+@use "./brain-food-caption.theme" as brain-food-caption;
+
+@mixin base() {
+  text-align: right;
+
+  &::before {
+    content: "- ";
+  }
+}
+
+:host {
+  @include base();
+  @include brain-food-caption.theme(theme.$theme);
+}

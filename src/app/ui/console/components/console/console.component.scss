@@ -1,0 +1,62 @@
+// General stuff
+@use "~src/theme" as theme;
+
+// component theming
+@use "./console.theme.scss" as console;
+
+@mixin base() {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  pre {
+    margin: 0;
+  }
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+  }
+
+  .console-content {
+    overflow: auto;
+  }
+
+  .empty {
+    text-align: center;
+    font-style: italic;
+  }
+
+  .logs {
+    width: 100%;
+    border-collapse: collapse;
+
+    td {
+      padding: 0 1rem;
+      border: none;
+    }
+  }
+
+  .line,
+  .time,
+  .scope {
+    width: 1px;
+  }
+
+  .line,
+  .time {
+    text-align: right;
+  }
+
+  .console-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+:host {
+  @include base();
+  @include console.theme(theme.$theme);
+}

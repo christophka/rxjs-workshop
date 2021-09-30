@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "~@ckapp/angular-components" as ckad;
+
+// Define colors.
+$primary: ckad.define-color-scheme(ckad.$purple-palette, $lighter: 200);
+$accent: ckad.define-color-scheme(ckad.$blue-palette);
+$success: ckad.define-color-scheme(ckad.$green-palette);
+$error: ckad.define-color-scheme(ckad.$red-palette);
+$warn: ckad.define-color-scheme(ckad.$orange-palette);
+$neutral: ckad.define-color-scheme(ckad.$gray-palette, $lighter: 200);
+
+// Define typography.
+$typography-config: ckad.define-typography-config(
+  $font-family: '"Helvetica Neue", sans-serif',
+  $display-4:
+    ckad.define-typography-level(112px, 112px, 200, $letter-spacing: -0.05em),
+  $display-3:
+    ckad.define-typography-level(56px, 56px, 100, $letter-spacing: 0.01em),
+  $display-2:
+    ckad.define-typography-level(45px, 48px, 100, $letter-spacing: 0.01em),
+  $display-1: ckad.define-typography-level(34px, 40px, 100),
+  $headline: ckad.define-typography-level(24px, 32px, 400),
+  $title: ckad.define-typography-level(20px, 32px, 500),
+  $subheading-2: ckad.define-typography-level(16px, 28px, 400),
+  $subheading-1: ckad.define-typography-level(15px, 24px, 400),
+  $body-2: ckad.define-typography-level(14px, 24px, 500),
+  $body-1: ckad.define-typography-level(14px, 20px, 400),
+  $caption: ckad.define-typography-level(12px, 20px, 400),
+  $button: ckad.define-typography-level(14px, 14px, 500),
+  $input: ckad.define-typography-level(inherit, 1.125, 400),
+);
+
+// Define a theme
+$theme: ckad.make-theme(
+  (
+    color: (
+      "neutral": $neutral,
+      "primary": $primary,
+      "accent": $accent,
+      "error": $error,
+      "success": $success,
+      "warn": $warn,
+      "is-dark": true,
+    ),
+    typography: $typography-config,
+  )
+);

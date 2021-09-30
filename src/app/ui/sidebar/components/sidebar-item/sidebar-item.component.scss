@@ -1,0 +1,17 @@
+// General stuff
+@use "~src/theme" as theme;
+
+// component theming
+@use "./sidebar-item.theme" as sidebar-item;
+
+@mixin base() {
+  cursor: pointer;
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+
+:host {
+  @include base();
+  @include sidebar-item.theme(theme.$theme);
+}

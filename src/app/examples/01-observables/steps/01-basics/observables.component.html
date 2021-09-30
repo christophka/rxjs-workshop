@@ -1,0 +1,54 @@
+<h1>Creating your first observable</h1>
+
+<p>
+  Take a look at the code in
+  <code class="bg-warn-lighter">{{ this.file }}</code>
+  and try to implement the existing behaviour using an
+  <code>Observable</code>.
+</p>
+
+<p>
+  The <code>Observable</code> constructor takes a function as an argument, which
+  is called upon subscription with the <code>Subscriber</code>.
+</p>
+
+<div class="card-grid">
+  <app-tip-card>
+    <ckad-card-header class="bg-primary-lighter">
+      <ckad-card-title class="ckad-display-1">Emit a value</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        In order to emit a new value, you can use the subscribers
+        <code>next</code> function.
+      </p>
+    </ckad-card-content>
+  </app-tip-card>
+
+  <app-tip-card>
+    <ckad-card-header class="bg-primary-lighter">
+      <ckad-card-title class="ckad-display-1">Complete</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Call <code>complete()</code> to notify the subscriber, that the
+        <code>Observable</code> is finished.
+      </p>
+    </ckad-card-content>
+  </app-tip-card>
+
+  <app-tip-card>
+    <ckad-card-header class="bg-primary-lighter">
+      <ckad-card-title class="ckad-display-1">Subscribe</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Remember that you need to <code>subscribe</code> to an
+        <code>Observable</code>, in order to "call" it.
+      </p>
+    </ckad-card-content>
+  </app-tip-card>
+</div>

@@ -1,1 +1,24 @@
+// Import from modules
+@use "~@ckapp/angular-components" as ckad;
+
+// Local imports
+@use "./theme" as theme;
+@use "./app/ui/ui-base" as ui-base;
+
+// ========================================================
+// Core
+@include ckad.core();
+@include ui-base.core();
+
+// theming
+@include ckad.apply-theme(theme.$theme);
+@include ui-base.theme(theme.$theme);
+// ========================================================
+
 /* You can add global styles to this file, and also import other style files */
+
+cite {
+  a {
+    color: inherit;
+  }
+}

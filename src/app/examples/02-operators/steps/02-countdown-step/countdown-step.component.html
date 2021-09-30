@@ -1,0 +1,12 @@
+<h1>Implementing a countdown</h1>
+
+<div class="form-line">
+  <input type="number" [formControl]="this.countdownCtrl" />
+  <button ckad-button color="accent" (click)="this.onStart()">
+    Start countdown!
+  </button>
+</div>
+
+<div *ngIf="this.countdown$ | async as countdown">
+  {{ countdown }}
+</div>

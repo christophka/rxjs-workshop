@@ -1,0 +1,30 @@
+$example-wrapper-content--padding: 2rem;
+$example-wrapper-content-console--margin: 0.5rem;
+
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 100%;
+  max-height: 100%;
+
+  .back {
+    margin-bottom: 2rem;
+  }
+
+  main {
+    max-height: 100vh;
+    display: grid;
+    grid-template-rows: minmax(auto, 60%) 40%;
+    grid-template-columns: 1fr;
+  }
+
+  app-console {
+    margin: $example-wrapper-content-console--margin;
+    margin-top: 0;
+  }
+
+  .content {
+    padding: $example-wrapper-content--padding;
+    overflow: auto;
+  }
+}

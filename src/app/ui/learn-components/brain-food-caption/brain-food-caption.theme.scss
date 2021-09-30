@@ -1,0 +1,16 @@
+@use "sass:map";
+
+@mixin color($theme) {
+  $brain-food-caption--color: map.get($theme, "color", "neutral", "default");
+  color: $brain-food-caption--color;
+}
+
+@mixin theme-variables($theme) {
+  $brain-food-caption--font-size: 0.875em;
+  font-size: $brain-food-caption--font-size;
+}
+
+@mixin theme($theme) {
+  @include theme-variables($theme);
+  @include color($theme);
+}

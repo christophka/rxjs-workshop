@@ -1,0 +1,54 @@
+<h1>Observables and async</h1>
+
+<p>
+  Take a look at the code in
+  <code class="bg-warn-lighter">{{ this.file }}</code>
+  and try to implement the existing behaviour using an
+  <code>Observable</code>.
+</p>
+
+<p>
+  An <code>Observable</code> takes control over producing values and when to
+  emit them to an <code>Observer</code> that consumes these values. As that,
+  values can be emitted <code>async</code>.
+</p>
+
+<div class="card-grid">
+  <app-tip-card>
+    <ckad-card-header class="bg-primary-lighter">
+      <ckad-card-title class="ckad-display-1">No complete</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        It's totally okay, when your <code>Observable</code> never calls
+        <code>complete</code>.
+      </p>
+    </ckad-card-content>
+  </app-tip-card>
+
+  <app-tip-card>
+    <ckad-card-header class="bg-accent-lighter">
+      <ckad-card-title class="ckad-display-1">Unsubscribe</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Make sure to <code>unsubscribe</code> from your <code>Observable</code>.
+      </p>
+    </ckad-card-content>
+  </app-tip-card>
+
+  <app-tip-card>
+    <ckad-card-header class="bg-success-lighter">
+      <ckad-card-title class="ckad-display-1">Teardown</ckad-card-title>
+    </ckad-card-header>
+
+    <ckad-card-content>
+      <p>
+        Add your teardown logic by returning a function from within your
+        <code>Observable</code>.
+      </p>
+    </ckad-card-content>
+  </app-tip-card>
+</div>
